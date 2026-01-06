@@ -8,9 +8,9 @@ const createEmail = async (req,res) => {
             recepientEmail : req.body.recepientEmail,
             notificationTime : req.body.notificationTime
         }
-        const istDate = new Date(req.body.notificationTime);
-        const utcDate = new Date(istDate.getTime() - (5.5 * 60 * 60 * 1000));
-        notificationData.notificationTime = utcDate;
+        // const istDate = new Date(req.body.notificationTime);
+        // const utcDate = new Date(istDate.getTime() - (5.5 * 60 * 60 * 1000));
+        // notificationData.notificationTime = utcDate;
 
         const notification = await createNotification(notificationData);
         return res.status(200).json({

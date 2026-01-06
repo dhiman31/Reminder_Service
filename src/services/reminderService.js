@@ -17,6 +17,12 @@ const sendBasicEmail = async (mailFrom , mailTo , mailSubject , mailBody) => {
 
 const createNotification = async (data) => {
     try {
+      const { subject, content, notificationTime, recepientEmail } = data;
+
+      if (!subject || !content || !notificationTime || !recepientEmail) {
+      throw new Error('Invalid notification payload');
+      }
+
       const notification = await reminderRepo.createNotification(data);
       return notification;
 
