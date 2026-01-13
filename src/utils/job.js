@@ -13,7 +13,7 @@ const setUpJobs = () => {
         for (const element of notifications) {
         await sender.sendMail({
             from: EMAIL_ID,
-            to: EMAIL_ID,
+            to: element.recepientEmail,
             subject: element.subject,
             text: element.content
         });
